@@ -6,7 +6,7 @@ namespace Product.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class ProdcutController(ApplicationDbContext context) : ControllerBase
+public class ProductController(ApplicationDbContext context) : ControllerBase
 {
     private readonly ApplicationDbContext _context = context;
 
