@@ -1,4 +1,6 @@
-﻿namespace Product.API.Models;
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace Product.API.Models;
 
 public class ApplicationDbContext : DbContext
 {

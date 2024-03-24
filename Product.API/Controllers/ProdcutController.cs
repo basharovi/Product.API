@@ -1,4 +1,5 @@
-﻿using Product.API.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using Product.API.Models;
 using ProductModel = Product.API.Models.Product;
 
 namespace Product.API.Controllers;
@@ -9,7 +10,7 @@ public class ProdcutController : ControllerBase
 {
     private readonly ApplicationDbContext _context;
 
-    public ItemsController(ApplicationDbContext context)
+    public ProdcutController(ApplicationDbContext context)
     {
         _context = context;
     }
