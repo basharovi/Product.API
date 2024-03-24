@@ -6,14 +6,9 @@ namespace Product.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class ProdcutController : ControllerBase
+public class ProdcutController(ApplicationDbContext context) : ControllerBase
 {
-    private readonly ApplicationDbContext _context;
-
-    public ProdcutController(ApplicationDbContext context)
-    {
-        _context = context;
-    }
+    private readonly ApplicationDbContext _context = context;
 
     [HttpGet("{id}")]
     public async Task<ActionResult<ProductModel>> GetItem(int id)
@@ -21,9 +16,7 @@ public class ProdcutController : ControllerBase
         var item = await _context.Products.FindAsync(id);
 
         if (item == null)
-        {
             return NotFound();
-        }
 
         return item;
     }
