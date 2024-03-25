@@ -10,6 +10,9 @@ public class ProductController(ApplicationDbContext context) : ControllerBase
 {
     private readonly ApplicationDbContext _context = context;
 
+    [HttpGet]
+    public ActionResult Greetings() => Ok("Hello, I'm alive!");
+
     [HttpGet("{id}")]
     public async Task<ActionResult<ProductModel>> GetItem(int id)
     {
