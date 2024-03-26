@@ -1,25 +1,20 @@
-version: '3.8'
+version: '3.4'
 
 name: product_services
 services:
-  productapi:
+  product_api:
     build:
       context: .
       dockerfile: Product.API/Dockerfile
     ports:
       - "5000:8080"
     depends_on:
-      - sqlserver
+      - docker_sqlserver
 
-  sqlserver:
-    container_name: sqlserver
+  docker_sqlserver:
+    container_name: docker_sqlserver
     build:
       context: .
-      dockerfile: Product.API/Dockerfile.sqlserver
+      dockerfile: Product.API/db.Dockerfile
     ports:
       - "1433:1433"
-    volumes:
-      - sqlserver:/var/lib/mssql/data
-
-volumes:
-  sqlserver:

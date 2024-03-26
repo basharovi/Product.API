@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Product.API.Models;
 
@@ -6,6 +7,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     : DbContext(options)
 {
     public DbSet<Product> Products { get; set; }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
