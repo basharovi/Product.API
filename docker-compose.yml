@@ -3,6 +3,7 @@ version: '3.4'
 name: product_services
 services:
   product_api:
+    container_name: product_api
     build:
       context: .
       dockerfile: Product.API/Dockerfile

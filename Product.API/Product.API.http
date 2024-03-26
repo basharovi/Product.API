@@ -3,8 +3,15 @@
 GET {{Product.API_HostAddress}}/api/product
 Accept: application/json
 
+###
 
 GET {{Product.API_HostAddress}}/api/product/1
+Accept: application/json
+
+###
+
+
+GET {{Product.API_HostAddress}}/api/product/5
 Accept: application/json
 
 ###
